@@ -1,0 +1,94 @@
+Լաբորատոր աշխատանք 4
+Առաջադրանքներ
+
+1. Ստեղծել նոր ֆայլ՝ file.txt, և դրա համար սահմանել հետևյալ իրավունքները․ - rwx r-- r--
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ touch file.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 744 file.txt
+
+//-------------------------------------
+
+2. Փոփոխել file.txt ֆայլի իրավունքները՝ բոլոր օգտատերերի համար ավելացնելով
+կատարելու իրավունք։ Օգտվել ֆայլի ռեժիմների սիմվոլիկ ներկայացումից։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod a+x file.txt
+
+//-------------------------------------
+
+3. Փոփոխել file.txt ֆայլի իրավունքները՝ խմբի օգտատերերի և այլ օգտատերերի համար
+հեռացնելով կատարելու իրավունքը։ Օգտվել սիմվոլիկ ներկայացումից։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod go-x file.txt
+
+//-------------------------------------
+
+4. Փոփոխել file.txt ֆայլի իրավունքները՝ հեռացնելով բոլոր իրավունքները, և
+սահմանելով գրելու և կարդալու իրավունքներ միայն ֆայլի սեփականատիրոջ համար։
+Նույն գործողությունը կատարել 2 անգամ ՝ օգտվելով ֆայլի ռեժիմների 8-ական և
+սիմվոլիկ ներկայացումներից։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 600 file.txt
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod u=wr file.txt
+
+//-------------------------------------
+
+5. Ստեղծել նոր դիրեկտորիա՝ dir: Սահմանել հետևյալ իրավունքները․ d rw- rw- rw-։ dir
+դիրեկտորիայում ստեղծել նոր ֆայլ՝ file.txt։ Բացատրել ստացված
+հաղորդագրությունը։ Փոփոխել դիրեկտորիայի իրավունքներն այնպես, որ ֆայլը
+հաջողությամբ ստեղծվի։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ mkdir dir
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 666 dir
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ touch dir/file.txt
+//թույլ չի տալիս ստեղծել ֆայլային ռեժիմը թույլ չի տալիս
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 775 dir
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ touch dir/file.txt
+
+//-------------------------------------
+
+6. dir դիրեկտորիայում ստեղծել ևս 2 ֆայլ՝ file1.txt, file2.txt։ Մեկ հրամանի կատարմամբ
+փոփոխել դիրեկտորիայի բոլոր ֆայլերի իրավունքները՝ սահմանելով - rwx rw- rw-։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ touch dir/file1.txt dir/file2.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 766 dir/*
+
+//-------------------------------------
+
+7. umask հրամանի միջոցով սահմանել այնպիսի bitmask, որ նոր ստեղծվող ֆայլերը
+լռելյայն կերպով ունենան հետևյալ իրավունքները․ - rw- r-- ---
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ umask 0026
+
+//-------------------------------------
+
+8. umask հրամանի միջոցով սահմանել այնպիսի bitmask, որ նոր ստեղծվող ֆայլերը
+լռելյայն կերպով ունենան հետևյալ իրավունքները․ - rw- --- ---: Վերադարձնել bitmask-ի
+լռելյայն արժեքը՝ կատարելով umask 0022 հրամանը։
+
+								// - rw- --- ---
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ umask 0600	// 0 100 000 000
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ umask 0022	// 0  6   0   0
+
+//-------------------------------------
+
+9. Ստեղծել սկրիպտ, որը կարտածի /home/student դիրեկտորիայի ֆայլերի ցուցակը։
+Սկրիպտի համար սահմանել - -wx r-- r-- իրավունքները։ Կատարել սկրիպտը և
+բացատրել ստացված հաղորդագրությունը։ Փոփոխել իրավունքներն այնպես, որ
+սկրիպտը կատարվի։
+
+//Թարգմանիչը ունի ներքին խնդիրներ թուլտվության մակարդակների որոշման ուղությամբ։
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ cat > list.sh
+#!/bin/bash
+ls /mnt/d/OS/OS-Homeworks/lab4
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ chmod 0344 list.sh //<- սխալ է ներմուծում թուլտվոթյան տեսքը
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ ./list.sh
+
+//-------------------------------------
+
+10. Սկրիպտը տեղադրել ~/bin դիրեկտորիայում։ Փոփոխել $PATH փոփոխականն այնպես,
+որ սկրիպտը հնարավոր լինի կատարել առանց հասցեն նշելու։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ mv list.sh ~/bin
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab4$ export PAT=~/bin:"$PATH"

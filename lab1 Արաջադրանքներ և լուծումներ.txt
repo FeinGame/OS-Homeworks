@@ -1,0 +1,104 @@
+Լաբորատոր աշխատանք 1
+Առաջադրանքներ
+1. Ստեղծել lab1 անունով դիրեկտորիա, որում ստեղծել 4 տեքստային ֆայլ՝ file.txt, file1.txt,
+file2.txt, file3.txt և 2 դիրեկտորիա՝ dir1, dir2։
+
+boris@DESKTOP-4LB4QI5:/mnt/d$ cd OS
+boris@DESKTOP-4LB4QI5:/mnt/d/OS$ ls
+OS-Homeworks
+boris@DESKTOP-4LB4QI5:/mnt/d/OS$ cd OS-Homeworks
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ ls
+README.md
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ mkdir lab1
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ cd lab1
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ touch file.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ touch file1.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ touch file2.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ touch file3.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mkdir dir1
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mkdir dir2
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$
+
+//------------------------------------
+
+2. Կատարել հետևյալ հրամանները և բացատրել տարբերությունը․
+ls *.txt
+ls * .txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls *.txt
+file.txt  file1.txt  file2.txt  file3.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls * .txt
+ls: cannot access '.txt': No such file or directory
+file.txt  file1.txt  file2.txt  file3.txt
+
+dir1:
+
+dir2:
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$
+
+//------------------------------------
+
+3. Ցուցադրել բոլոր տեքստային ֆայլերը (ավարտվում է .txt սիմվոլներով), որոնց
+անվանումը սկսվում է f սիմվոլով և բաղկացած է 4 սիմվոլից։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls f???.txt
+file.txt
+
+//------------------------------------
+
+4. Ցուցադրել բոլոր տեքստային ֆայլերը, որոնց անվանումը սկսվում է file բառով, որին
+հաջորդում է թվանշան։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls file[[:digit:]].txt
+file1.txt  file2.txt  file3.txt
+
+//------------------------------------
+
+5. Ցուցադրել բոլոր տեքստային ֆայլերը, որոնց անվան վերջին սիմվոլը փոքրատառ է,
+կամ 1, 2 թվանշաններից որևէ մեկը։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls *[[:lower:]12].txt
+file.txt  file1.txt  file2.txt
+
+//------------------------------------
+
+6. Պատճենել /etc/passwd ֆայլը lab1 դիրեկտորիայում։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ cd /etc/passwd passwd
+
+//------------------------------------
+
+7. Անվանափոխել պատճենված ֆայլը՝ այն դարձնելով new: Տեղափոխել new ֆայլը դեպի
+dir1, այնուհետև տեղափոխել դեպի dir2:
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv passwd new
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv new dir1/
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv dir1/new dir2/
+
+//------------------------------------
+
+
+8. Անվանափոխել dir2-ը՝ այն դարձնելով dir3։ Տեղափոխել dir3-ը դեպի dir1։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv dir2 dir3
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ ls
+dir1  dir3  file.txt  file1.txt  file2.txt  file3.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv dir3 dir1/
+
+//------------------------------------
+
+9. Տեղափոխել dir3-ում գտնվող new ֆայլը դեպի lab1։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ mv dir1/dir3/new ./
+
+//------------------------------------
+
+10. Ջնջել lab1 դիրեկտորիան։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab1$ cd ..
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ rm lab1
+rm: cannot remove 'lab1': Is a directory
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ rm -r lab1
+
+//------------------------------------

@@ -1,0 +1,115 @@
+Լաբորատոր աշխատանք 2
+Առաջադրանքներ
+
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ mkdir lab2
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks$ cd lab2
+
+1. Կատարել հետևյալ հրամանները, բացատրել տարբերությունը․
+1)cat > file1
+2)cat file1
+3)cat < file1
+
+1)
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat > file1.txt
+os
+lab2
+window
+qwerty123
+//նշված ֆայլային դակումենտում ավելացնում է ներմուծված բառերը(կամ սիմվոլները)
+//Դուրս գալու ամար սեղմել Ctrl + D
+
+2)
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat file1.txt
+os
+lab2
+window
+qwerty123
+//Արտածում է ֆայլի պարունակությունը
+
+3)
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat <file1.txt
+os
+lab2
+window
+qwerty123
+// Այս 2 մեթոդների տարբերությունն այն է, որ այս դեպքում cat հրամանին հայտնի չէ
+// ֆայլի անունը․ այն տվյալները կարդում է STDIN հոսքից, որը վերահասցեավորված է դեպի
+// ֆայլը։ Նախորդ դեպքում հրամանը տվյալները կարդում է անմիջապես ֆայլի
+
+//-------------------------------
+
+2. Ստեղծել որոշակի պարունակությամբ 3 տեքստային ֆայլ՝ file1.txt, file2.txt, file3.txt։ Այս
+ֆայլերի պարունակությունը կցել միմյանց և գրել նոր ֆայլում՝ final.txt։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat > file2.txt
+os
+lab2
+file2
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat > file3.txt
+os
+lab2
+file3
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat file1.txt file2.txt file3.txt > final.txt
+
+//-------------------------------
+
+3. Ցուցադրել /home/student դիրեկտորիայում տեքստային ֆայլերի քանակը։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ find /home/student -type f -name "*.txt" | wc -l
+        5
+
+// find *.txt բոլոր տեքստային ֆայլերը տրված դիրեկտորիայում
+// wc -l տողերի քանակը
+
+
+//-------------------------------
+
+4. Սորտավորել file1.txt, file2.txt, file3.txt ֆայլերի պարունակությունը և գրել նոր ֆայլում։
+
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat file1.txt file2.txt file3.txt | sort > sor
+ted.txt
+
+//-------------------------------
+
+5. Արտածել /home/student դիրեկտորիայի առաջին 15 ֆայլերը՝ դասավորված նվազման
+կարգով ըստ ֆայլի ծավալի։
+
+
+
+//-------------------------------
+
+6. Արտածել /home/student դիրեկտորիայի ֆայլերի ցուցակը, միաժամանակ այն
+տեղադրելով ls.txt ֆայլում։
+
+
+
+//-------------------------------
+
+7. Օգտագործելով tr հրամանը՝ գաղտնագրել "secret text" տողը ROT13 ալգորիթմով։
+Վերծանել գաղտնագրված հաղորդագրությունը։
+
+
+
+//-------------------------------
+
+8. Ստեղծել նոր ֆայլ՝ home.txt, հետևյալ պարունակությամբ․
+Student’s home directory is {home_dir}.
+sed հրամանի միջոցով փոխարինել {home_dir} հատվածը /home/student-ով։
+
+
+
+//-------------------------------
+
+9. Ստեղծել ֆայլ, որն ունի առնվազն 5 տող պարունակություն՝ file4.txt։ Արտածել 2-4-րդ
+տողերը։
+
+
+
+//-------------------------------
+
+10. Ջնջել file4.txt ֆայլի 2-4-րդ տողերը։
+
+
+
+

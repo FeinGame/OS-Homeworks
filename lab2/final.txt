@@ -1,0 +1,10 @@
+os
+lab2
+window
+qwerty123
+os
+lab2
+file2
+os
+lab2
+file3

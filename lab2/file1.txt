@@ -1,0 +1,4 @@
+os
+lab2
+window
+qwerty123

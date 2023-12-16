@@ -75,13 +75,19 @@ ted.txt
 5. Արտածել /home/student դիրեկտորիայի առաջին 15 ֆայլերը՝ դասավորված նվազման
 կարգով ըստ ֆայլի ծավալի։
 
-
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ ls -l |sort -r -k 5| head -15
+-rwxrwxrwx 1 boris boris 53 Dec 16 13:22 sorted.txt
+-rwxrwxrwx 1 boris boris 53 Dec 16 13:14 final.txt
+-rwxrwxrwx 1 boris boris 25 Dec 16 13:03 file1.txt
+-rwxrwxrwx 1 boris boris 14 Dec 16 13:13 file3.txt
+-rwxrwxrwx 1 boris boris 14 Dec 16 13:13 file2.txt
 
 //-------------------------------
 
 6. Արտածել /home/student դիրեկտորիայի ֆայլերի ցուցակը, միաժամանակ այն
 տեղադրելով ls.txt ֆայլում։
 
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ ls -l >ls.txt
 
 
 //-------------------------------
@@ -89,7 +95,10 @@ ted.txt
 7. Օգտագործելով tr հրամանը՝ գաղտնագրել "secret text" տողը ROT13 ալգորիթմով։
 Վերծանել գաղտնագրված հաղորդագրությունը։
 
-
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ echo "text lab" | tr a-m,n-z n-z,a-m
+grkg yno
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ echo "grkg yno" | tr n-z,a-m a-m,n-z
+text lab
 
 //-------------------------------
 
@@ -97,19 +106,36 @@ ted.txt
 Student’s home directory is {home_dir}.
 sed հրամանի միջոցով փոխարինել {home_dir} հատվածը /home/student-ով։
 
-
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat > home.txt
+Student's home directory is {home_dir}.
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ sed -i 's/{home_dir}/\/home\student/' home.txt
 
 //-------------------------------
 
 9. Ստեղծել ֆայլ, որն ունի առնվազն 5 տող պարունակություն՝ file4.txt։ Արտածել 2-4-րդ
 տողերը։
 
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat > filed4.txt
+a
+b
+c
+d
+e
+f
+g
 
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ ls
+file1.txt  file2.txt  file3.txt  filed4.txt  final.txt  home.txt  ls.txt  sorted.txt
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ cat filed4.txt | sed -n '2,4p'
+b
+c
+d
 
 //-------------------------------
 
 10. Ջնջել file4.txt ֆայլի 2-4-րդ տողերը։
 
+boris@DESKTOP-4LB4QI5:/mnt/d/OS/OS-Homeworks/lab2$ sed -i '2,4d' filed4.txt
 
 
 

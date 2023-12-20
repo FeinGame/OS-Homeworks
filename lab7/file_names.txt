@@ -1,0 +1,6 @@
+/mnt/d/OS/OS-Homeworks/lab7/1.sh
+/mnt/d/OS/OS-Homeworks/lab7/2.sh
+/mnt/d/OS/OS-Homeworks/lab7/3.sh
+/mnt/d/OS/OS-Homeworks/lab7/4.sh
+/mnt/d/OS/OS-Homeworks/lab7/5.sh
+/mnt/d/OS/OS-Homeworks/lab7/6.sh
